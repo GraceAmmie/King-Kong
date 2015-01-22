@@ -9,6 +9,7 @@ screen = pygame.display.set_mode([800, 600])
 class Player(pygame.sprite.Sprite):
     change_x = 0
     change_y = 0
+    change_z = 0
 
     def __init__(self, x, y):
         super().__init__()
