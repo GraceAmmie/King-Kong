@@ -20,7 +20,7 @@ playerpos  = [160, 300]
 green = (0, 128, 0)
 
 #load images
-img1 = pygame.image.load("kingkong.png")
+img1 = pygame.image.load("kingkong1.png")
 img2 = pygame.image.load ("bananas.png")
 img3 = pygame.image.load ("bomb.jpg")
 img4 = pygame.image.load("rival.jpg")
