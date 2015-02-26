@@ -86,7 +86,7 @@ while running :
         if badrect.left<64:
            healthvalue -= random.randint(5,20)
            badguys.pop(index)        
-        index+=1
+        
 
 #check for collisions(6.3.1)
         index1=0
@@ -96,10 +96,11 @@ while running :
             bullrect.top=bullet[2]
             if badrect.colliderect(bullrect):
                 acc[0]+=1
-                badguys.pop(index1)
+                badguys.pop(index)
                 bombs.pop(index1)
             index1+=1
             
+        index1+=1    
     for badguy in badguys:
         window.blit(rival, badguy)
 
@@ -142,10 +143,10 @@ while running :
                 keys[3]=False
 
 #fire bombs if mouse is clicked
-                if event.type==pygame.MOUSEBUTTONDOWN:
-                    position=pygame.mouse.get_pos()
-                    acc[1]+=1
-                bombs.append([math.atan2(position[1]-(playerpos1[1]+32),position[0]-(playerpos1[0]+26)),playerpos1[0]+32,playerpos1[1]+32])
+        if event.type==pygame.MOUSEBUTTONDOWN:
+            position=pygame.mouse.get_pos()
+            acc[1]+=1
+            bombs.append([math.atan2(position[1]-(playerpos1[1]+32),position[0]-(playerpos1[0]+26)),playerpos1[0]+32,playerpos1[1]+32])
                       
     if keys[0]:
         playerpos[1]-=5
