@@ -25,8 +25,8 @@ img2 = pygame.image.load ("bananas.png")
 img3 = pygame.image.load ("bomb.jpg")
 img4 = pygame.image.load("rival.jpg")
 rival = img4
-#img5 = pygame.image.load ("download.jpg")
-#img6 = pygame.image.load ("button.png")
+img5 = pygame.image.load ("redbar.jpng")
+img6 = pygame.image.load ("greenbar.png")
 img7 = pygame.image.load ("overs.jpg")
 img8 = pygame.image.load ("win.png")
 
@@ -104,10 +104,10 @@ while running :
     for badguy in badguys:
         window.blit(rival, badguy)
 
-        
-        #window.blit(img5, (5,5))
-        #for health1 in range(healthvalue):
-          #window.blit(img6, (health1+8,8))
+#display the healthbar      
+        window.blit(img5, (5,5))
+        for health1 in range(healthvalue):
+            window.blit(img6, (health1+8,8))
 
 #clock           
     font = pygame.font.Font(None, 24)
