@@ -14,15 +14,13 @@ class Menu(Frame):
         mine.window()
         mine.show_button()    
 
-
- def window(mine):
+    def window(mine):
         mine.master.title("King Kong")
 
         #load images
-        background = PhotoImage(file ="background.gif")
-        king = PhotoImage(file = "bg3.gif")
-        banana = PhotoImage(file ="banana2.gif")
-        basket = PhotoImage(file = "jl.gif")
+        background = PhotoImage(file ="bg.gif")
+        king = PhotoImage(file = "king1.gif")
+        mine.nextbackg = PhotoImage(file = "backg.gif")
         mine.new_game_btn = PhotoImage(file ="play.gif")
         mine.new_gameh_btn = PhotoImage(file ="play1.gif")
         mine.help_btn = PhotoImage(file = "help.gif")
@@ -31,7 +29,7 @@ class Menu(Frame):
         mine.exith_btn = PhotoImage(file = "quit1.gif")
         mine.back_btn =PhotoImage (file = "back.gif")
         mine.backh_btn =PhotoImage (file = "back1.gif")
-        mine.instruct = PhotoImage(file = "backg.gif")
+        mine.instruct = PhotoImage(file = "instruct.gif")
 
         mine.pack(fill = BOTH, expand = 1)
 
@@ -44,15 +42,7 @@ class Menu(Frame):
         mine.bg2_img.image = king
         mine.bg2_img.place(x=440, y=140)
 
-        mine.bg3_img = Label(mine, image = banana)
-        mine.bg3_img.image = banana
-        mine.bg3_img.place(x=280, y=15)
-        
-        mine.bg3_img = Label(mine, image = basket)
-        mine.bg3_img.image = basket
-        mine.bg3_img.place(x=270, y=350)
-
-     def show_button(mine):
+    def show_button(mine):
         #displaying of buttons
         mine.btn_ng = Button(mine, bd=0, bg="black", image = mine.new_game_btn, command = mine.new_game)
         mine.btn_ng.configure(image = mine.new_game_btn)
@@ -74,51 +64,43 @@ class Menu(Frame):
 
     def btn_ngEnter(mine, event):
         mine.btn_ng.configure(image = mine.new_gameh_btn)
-
-    def btn_helpEnter(mine, event):
-        mine.btn_help.configure(image = mine.helph_btn)
-
-    def btn_exitEnter(mine, event):
-        mine.btn_exit.configure(image = mine.exith_btn)
-
-    def btn_menuEnter(mine, event):
-        mine.btn_menu.configure(image = mine.backh_btn)
-
     def btn_ngLeave(mine, event):
         mine.btn_ng.configure(image =mine.new_game_btn )
 
+    def btn_helpEnter(mine, event):
+        mine.btn_help.configure(image = mine.helph_btn)
     def btn_helpLeave(mine, event):
         mine.btn_help.configure(image =mine.help_btn )
 
+    def btn_exitEnter(mine, event):
+        mine.btn_exit.configure(image = mine.exith_btn)
     def btn_exitLeave(mine, event):
         mine.btn_exit.configure(image =mine.exit_btn )
 
-    def btn_menuLeave(mine, event):
+    def btn_backEnter(mine, event):
+        mine.btn_menu.configure(image = mine.backh_btn)
+    def btn_backLeave(mine, event):
         mine.btn_menu.configure(image =mine.back_btn )
+  
 
     def new_game(mine):
         kingkong.main()
         mine.master.withdraw()
-
-    def sub_bg(mine, lbl):
+        
+    def nextback(mine, lbl):
         mine.window()
-        mine.bg_img.configure(image = mine.instruct)
+        mine.bg_img.configure(image = mine.nextbackg)
         
-        img = PhotoImage(file = "instruct.gif")
-        lbl = Label(mine, bd =0, image = img)
-        lbl.image = img
-        lbl.place(x = 300, y = 155)
-        
-        mine.back_btn= Button(mine, bd =0, bg = "gray", image = mine.back_btn, command = mine.back)
-        mine.back_btn.configure(image = mine.back_btn)
-        mine.back_btn.place(x =300, y = 400)
-        mine.back_btn.bind('<Enter>', mine.btn_backEnter)
-        mine.back_btn.bind('<Leave>', mine.btn_backLeave)
+        mine.back= Button(mine, bd =0, bg = "blue", image = mine.back_btn, command = mine.back)
+        mine.back.configure(image = mine.back_btn)
+        mine.back.place(x =250, y = 420)
+        mine.back.bind('<Enter>', mine.btn_backEnter)
+        mine.back.bind('<Leave>', mine.btn_backLeave)
 
     def helps(mine):
         mine.sub_bg("help")
 
-        img =PhotoImage(file = "backg.gif")
+        img =PhotoImage(file = "instuct.gif")
         lbl = Label(mine, bd = 0, image = img)
         lbl.image = img
         lbl.place(x = 290, y = 220)
