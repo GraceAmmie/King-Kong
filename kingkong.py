@@ -25,7 +25,7 @@ img2 = pygame.image.load ("bananas.png")
 img3 = pygame.image.load ("bomb.jpg")
 img4 = pygame.image.load("rival.jpg")
 rival = img4
-img5 = pygame.image.load ("redbar.jpng")
+img5 = pygame.image.load ("redbar.png")
 img6 = pygame.image.load ("greenbar.png")
 img7 = pygame.image.load ("overs.jpg")
 img8 = pygame.image.load ("win.png")
@@ -105,15 +105,15 @@ while running :
         window.blit(rival, badguy)
 
 #display the healthbar      
-        window.blit(img5, (5,5))
+        window.blit(img5, (500,10))
         for health1 in range(healthvalue):
-            window.blit(img6, (health1+8,8))
+            window.blit(img6, (health1+504,13))
 
 #clock           
-    font = pygame.font.Font(None, 24)
+    font = pygame.font.Font(None, 22)
     survivedtext = font.render(str((90000-pygame.time.get_ticks())/60000)+":"+str((90000-pygame.time.get_ticks())/1000%60).zfill(2), True, (0,0,0))
     textRect = survivedtext.get_rect()
-    textRect.topright=[635,5]
+    textRect.topright=[275,10]
     window.blit(survivedtext, textRect)
         
     pygame.display.flip()
