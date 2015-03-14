@@ -2,7 +2,7 @@ import sqlite3
 from tkinter import *
 from tkinter import ttk
 import tkinter as tk
-
+import kingkong
 
 class Menu(Frame):
 
@@ -20,7 +20,7 @@ class Menu(Frame):
         #load images
         background = PhotoImage(file ="bg.gif")
         king = PhotoImage(file = "king1.gif")
-        mine.nextbackg = PhotoImage(file = "backg.gif")
+        mine.nextbackg = PhotoImage(file = "bg5.gif")
         mine.new_game_btn = PhotoImage(file ="play.gif")
         mine.new_gameh_btn = PhotoImage(file ="play1.gif")
         mine.help_btn = PhotoImage(file = "help.gif")
@@ -29,7 +29,7 @@ class Menu(Frame):
         mine.exith_btn = PhotoImage(file = "quit1.gif")
         mine.back_btn =PhotoImage (file = "back.gif")
         mine.backh_btn =PhotoImage (file = "back1.gif")
-        mine.instruct = PhotoImage(file = "instruct.gif")
+        mine.instruct_btn = PhotoImage(file = "helpp.gif")
 
         mine.pack(fill = BOTH, expand = 1)
 
@@ -100,7 +100,7 @@ class Menu(Frame):
     def helps(mine):
         mine.sub_bg("help")
 
-        img =PhotoImage(file = "instuct.gif")
+        img =PhotoImage(file = "helpp.gif")
         lbl = Label(mine, bd = 0, image = img)
         lbl.image = img
         lbl.place(x = 290, y = 220)
