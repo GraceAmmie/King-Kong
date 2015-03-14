@@ -1,5 +1,5 @@
 import pygame
-import math, random
+import math, random, sys, copy
 from pygame.locals import *
 
 def main():
@@ -20,9 +20,14 @@ def main():
     playerpos  = [160, 300]
     green = (0, 128, 0)
 
+    done = False
+    over = False
+    play = False
+    menu = False
+
 #load images
     img1 = pygame.image.load("kingkong1.png")
-    img2 = pygame.image.load ("basket.png")
+    img2 = pygame.image.load ("basket.jpg")
     img3 = pygame.image.load ("bomb.jpg")
     img4 = pygame.image.load("rival.jpg")
     rival = img4
@@ -75,8 +80,8 @@ def main():
         index=0
         for badguy in badguys:
             if badguy[0]<-64:
-            badguys.pop(index)
-            badguy[0]-=7
+                badguys.pop(index)
+                badguy[0]-=7
 
 #attack bananas
             badrect=pygame.Rect(img4.get_rect())
@@ -157,16 +162,16 @@ def main():
             playerpos[0]+=5
 
 #win/lose check
-            if pygame.time.get_ticks()>=90000:
-                running=0
-                exitcode=1
-            if healthvalue<=0:
-                running=0
-                exitcode=0
-            if acc[1]!=0:
-                accuracy=acc[0]*1.0/acc[1]*100
-            else:
-                accuracy=0
+        if pygame.time.get_ticks()>=90000:
+            running=0
+            exitcode=1
+        if healthvalue<=0:
+            running=0
+            exitcode=0
+        if acc[1]!=0:
+            accuracy=acc[0]*1.0/acc[1]*100
+        else:
+            accuracy=0
             
 #display win or lose images
         if exitcode==0:
@@ -175,7 +180,7 @@ def main():
             window.blit(img8, (0,0))
 
         
-        while not done:
+    while not done:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
