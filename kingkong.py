@@ -37,11 +37,11 @@ def main():
     while running :
         badtimer-=1
         window.fill(green)
-        window.blit(img2, (0,0))
-        window.blit(img2, (0,100))
-        window.blit(img2, (0,200))
-        window.blit(img2, (0,300))
-        window.blit(img2, (0,400))
+        window.blit(img2, (0,5))
+        window.blit(img2, (0,110))
+        window.blit(img2, (0,210))
+        window.blit(img2, (0,310))
+        window.blit(img2, (0,410))
 
 #move the image
         position = pygame.mouse.get_pos()
