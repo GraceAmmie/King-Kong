@@ -4,7 +4,7 @@ from pygame.locals import *
 
 def main():
     pygame.init()
-    width, height = 650, 475
+    width, height = 740, 500
     window = pygame.display.set_mode((width, height))
     pygame.display.set_caption('King Kong')
 
@@ -22,13 +22,13 @@ def main():
 
 #load images
     img1 = pygame.image.load("kingkong1.png")
-    img2 = pygame.image.load ("bananas.png")
+    img2 = pygame.image.load ("basket.png")
     img3 = pygame.image.load ("bomb.jpg")
     img4 = pygame.image.load("rival.jpg")
     rival = img4
     img5 = pygame.image.load ("redbar.png")
     img6 = pygame.image.load ("greenbar.png")
-    img7 = pygame.image.load ("overs.jpg")
+    img7 = pygame.image.load ("over.jpg")
     img8 = pygame.image.load ("win.png")
 
 #display images on the screen
