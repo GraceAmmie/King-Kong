@@ -46,19 +46,19 @@ class Menu(Frame):
         #displaying of buttons
         mine.btn_ng = Button(mine, bd=0, bg="black", image = mine.new_game_btn, command = mine.new_game)
         mine.btn_ng.configure(image = mine.new_game_btn)
-        mine.btn_ng.place(x=15, y = 100)
+        mine.btn_ng.place(x=0, y = 450)
         mine.btn_ng.bind('<Enter>', mine.btn_ngEnter)
         mine.btn_ng.bind('<Leave>', mine.btn_ngLeave)
 
         mine.btn_help = Button(mine, bd=0, bg="black", image = mine.help_btn, command = mine.helps)
         mine.btn_help.configure(image = mine.help_btn)
-        mine.btn_help.place(x=15, y = 200)
+        mine.btn_help.place(x=190, y =450)
         mine.btn_help.bind('<Enter>', mine.btn_helpEnter)
         mine.btn_help.bind('<Leave>', mine.btn_helpLeave)
 
         mine.btn_exit = Button(mine, bd=0, bg="black", image = mine.exit_btn, command = win.destroy)
         mine.btn_exit.configure(image = mine.exit_btn)
-        mine.btn_exit.place(x=15, y = 300)
+        mine.btn_exit.place(x=350, y = 450)
         mine.btn_exit.bind('<Enter>', mine.btn_exitEnter)
         mine.btn_exit.bind('<Leave>', mine.btn_exitLeave)
 
