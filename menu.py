@@ -98,7 +98,7 @@ class Menu(Frame):
         mine.back.bind('<Leave>', mine.btn_backLeave)
 
     def helps(mine):
-        mine.sub_bg("help")
+        mine.nextback("help")
 
         img =PhotoImage(file = "helpp.gif")
         lbl = Label(mine, bd = 0, image = img)
