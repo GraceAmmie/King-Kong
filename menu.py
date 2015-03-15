@@ -58,7 +58,7 @@ class Menu(Frame):
 
         mine.btn_exit = Button(mine, bd=0, bg="black", image = mine.exit_btn, command = win.destroy)
         mine.btn_exit.configure(image = mine.exit_btn)
-        mine.btn_exit.place(x=350, y = 450)
+        mine.btn_exit.place(x=380, y = 450)
         mine.btn_exit.bind('<Enter>', mine.btn_exitEnter)
         mine.btn_exit.bind('<Leave>', mine.btn_exitLeave)
 
@@ -80,7 +80,7 @@ class Menu(Frame):
     def btn_backEnter(mine, event):
         mine.btn_menu.configure(image = mine.backh_btn)
     def btn_backLeave(mine, event):
-        mine.btn_menu.configure(image =mine.back_btn )
+        mine.btn_menu.configure(image = mine.back_btn )
   
 
     def new_game(mine):
@@ -93,7 +93,7 @@ class Menu(Frame):
         
         mine.back= Button(mine, bd =0, bg = "blue", image = mine.back_btn, command = mine.back)
         mine.back.configure(image = mine.back_btn)
-        mine.back.place(x =250, y = 420)
+        mine.back.place(x =230, y = 445)
         mine.back.bind('<Enter>', mine.btn_backEnter)
         mine.back.bind('<Leave>', mine.btn_backLeave)
 
@@ -103,7 +103,7 @@ class Menu(Frame):
         img =PhotoImage(file = "helpp.gif")
         lbl = Label(mine, bd = 0, image = img)
         lbl.image = img
-        lbl.place(x = 290, y = 220)
+        lbl.place(x = 150, y = 50)
 
     def back(mine):
         mine.window()
