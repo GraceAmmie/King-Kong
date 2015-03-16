@@ -78,9 +78,9 @@ class Menu(Frame):
         mine.btn_exit.configure(image =mine.exit_btn )
 
     def btn_backEnter(mine, event):
-        mine.btn_menu.configure(image = mine.backh_btn)
+        mine.back.configure(image = mine.backh_btn)
     def btn_backLeave(mine, event):
-        mine.btn_menu.configure(image = mine.back_btn )
+        mine.back.configure(image = mine.back_btn )
   
 
     def new_game(mine):
