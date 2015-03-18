@@ -28,8 +28,8 @@ def main():
 #load images
     img1 = pygame.image.load("kingkong1.png")
     img2 = pygame.image.load ("basket.jpg")
-    img3 = pygame.image.load ("bomb.jpg")
-    img4 = pygame.image.load("rival.jpg")
+    img3 = pygame.image.load ("bomb.png")
+    img4 = pygame.image.load("rival.png")
     rival = img4
     img5 = pygame.image.load ("redbar.png")
     img6 = pygame.image.load ("greenbar.png")
@@ -81,15 +81,15 @@ def main():
         for badguy in badguys:
             if badguy[0]<-64:
                 badguys.pop(index)
-                badguy[0]-=7
+            badguy[0]-=7
 
 #attack bananas
             badrect=pygame.Rect(img4.get_rect())
             badrect.top=badguy[1]
             badrect.left=badguy[0]
             if badrect.left<64:
-               healthvalue -= random.randint(5,20)
-               badguys.pop(index)        
+                healthvalue -= random.randint(5,20)
+                badguys.pop(index)        
         
 
 #check for collisions(6.3.1)
@@ -109,20 +109,20 @@ def main():
             window.blit(rival, badguy)
 
 #display the healthbar      
-            window.blit(img5, (500,10))
-            for health1 in range(healthvalue):
-                window.blit(img6, (health1+504,13))
+        window.blit(img5, (500,10))
+        for health1 in range(healthvalue):
+            window.blit(img6, (health1+504,13))
 
 #clock           
-            font = pygame.font.Font(None, 22)
-            survivedtext = font.render(str((90000-pygame.time.get_ticks())/60000)+":"+str((90000-pygame.time.get_ticks())/1000%60).zfill(2), True, (0,0,0))
-            textRect = survivedtext.get_rect()
-            textRect.topright=[275,10]
-            window.blit(survivedtext, textRect)
+        font = pygame.font.Font(None, 22)
+        survivedtext = font.render(str((90000-pygame.time.get_ticks())/60000)+":"+str((90000-pygame.time.get_ticks())/1000%60).zfill(2), True, (0,0,0))
+        textRect = survivedtext.get_rect()
+        textRect.topright=[470,10]
+        window.blit(survivedtext, textRect)
         
-            pygame.display.flip()
+        pygame.display.flip()
 
-#move the image using the arrow keys
+#move the image using the arrow keyss
         for event in pygame.event.get():
             if event.type==pygame.QUIT:
                 pygame.quit()
@@ -168,10 +168,6 @@ def main():
         if healthvalue<=0:
             running=0
             exitcode=0
-        if acc[1]!=0:
-            accuracy=acc[0]*1.0/acc[1]*100
-        else:
-            accuracy=0
             
 #display win or lose images
         if exitcode==0:
