@@ -40,7 +40,7 @@ class Menu(Frame):
 
         mine.bg2_img = Label(mine, image = king)
         mine.bg2_img.image = king
-        mine.bg2_img.place(x=440, y=140)
+        mine.bg2_img.place(x=580, y=420)
 
     def show_button(mine):
         #displaying of buttons
